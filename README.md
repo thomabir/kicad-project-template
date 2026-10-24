@@ -1,6 +1,6 @@
 <!--
 Each section holds content, "TODO", or "N/A: <reason>".
-Do not delete sections: `make check` reports missing sections.
+Do not delete sections: `make check-pcb` reports missing sections.
 Guidance for each section is in an HTML comment under its heading.
 -->
 

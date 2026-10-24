@@ -52,7 +52,7 @@ PRJ-0123-name/
 - Each component has: datasheet, manufacturer, MPN, DigiKey link and part number, Mouser link and part number, notes (shown on the BOM).
 - Generic passives: prefer PartsBox stock if in the same price class with the same or strictly better specifications.
 - PartsBox project upload and inventory crosscheck: by script through the PartsBox API. Notify the user if stock is low.
-- Symbol, footprint and 3D model: `make part LCSC=...` (easyeda2kicad, no login) into `pcb/kicad/lib/`. The agent finds the LCSC number.
+- Symbol, footprint and 3D model: `make import-part LCSC=...` (easyeda2kicad, no login) into `pcb/kicad/lib/`. The agent finds the LCSC number.
 - Prices: DigiKey API, Mouser as fallback. A dated price cache (private, not tracked) keeps the README build offline.
 
 ## Outputs
@@ -67,7 +67,7 @@ PRJ-0123-name/
 ## Project identifier
 
 - Projects have an identifier such as "PRJ-0046" or "PRT-0121". Ask user if not obvious one present.
-- KiCad has no DWG-No field: the identifier is in front of the title, checked by `make check`. Example: "PRJ-0123 Quad Cell Photoamplifier".
+- KiCad has no DWG-No field: the identifier is in front of the title, checked by `make check-pcb`. Example: "PRJ-0123 Quad Cell Photoamplifier".
 
 ## LLM tasks where heuristics are required
 
