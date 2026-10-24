@@ -1,7 +1,8 @@
 build/
 .venv/
 
-# PartsBox stock (changes with the inventory)
+# Private: prices and PartsBox stock
+pcb/bom/prices.csv
 pcb/bom/stock.csv
 pcb/bom/order-digikey-against-stock.csv
 

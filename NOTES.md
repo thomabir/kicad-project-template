@@ -53,7 +53,7 @@ PRJ-0123-name/
 - Generic passives: prefer PartsBox stock if in the same price class with the same or strictly better specifications.
 - PartsBox project upload and inventory crosscheck: by script through the PartsBox API. Notify the user if stock is low.
 - Symbol, footprint and 3D model: `make part LCSC=...` (easyeda2kicad, no login) into `pcb/kicad/lib/`. The agent finds the LCSC number.
-- Prices: DigiKey API, Mouser as fallback. A dated price cache keeps the README build offline.
+- Prices: DigiKey API, Mouser as fallback. A dated price cache (private, not tracked) keeps the README build offline.
 
 ## Outputs
 
