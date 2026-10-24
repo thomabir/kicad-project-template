@@ -10,10 +10,10 @@ TODO
 
 <!-- One-line description. One image: render or photo. -->
 
+## Status and errata
+
 <!-- BEGIN generated: titleblock -->
 <!-- END generated: titleblock -->
-
-## Status and errata
 
 TODO
 

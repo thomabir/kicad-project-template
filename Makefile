@@ -1,8 +1,9 @@
-PRO := $(firstword $(wildcard pcb/kicad/*.kicad_pro))
+# File names can contain spaces: recipes quote PRO.
+PRO := $(shell ls pcb/kicad/*.kicad_pro | head -n 1)
 BOARDS ?= 2
 HWKIT ?= uv run hwkit
 PRICES := pcb/bom/prices.csv
-README_ARGS := README.md --project $(PRO) --prices $(PRICES) --boards $(BOARDS) --work pcb/build/readme
+README_ARGS := README.md --project "$(PRO)" --prices $(PRICES) --boards $(BOARDS) --work pcb/build/readme
 
 .PHONY: help init fab-rules part distributors distributors-write prices outputs readme check release-check stock partsbox-project all clean
 
@@ -24,43 +25,43 @@ help:
 	@echo "BOARDS=$(BOARDS) (number of boards for order files and prices)"
 
 init:
-	$(HWKIT) kicad init $(PRO) --id "$(ID)" --title "$(TITLE)" --readme README.md
+	$(HWKIT) kicad init "$(PRO)" --id "$(ID)" --title "$(TITLE)" --readme README.md
 
 fab-rules:
-	$(HWKIT) kicad fab-rules $(PRO) $(PROCESS)
+	$(HWKIT) kicad fab-rules "$(PRO)" $(PROCESS)
 
 part:
-	$(HWKIT) kicad import-part $(PRO) $(LCSC)
+	$(HWKIT) kicad import-part "$(PRO)" $(LCSC)
 
 distributors:
-	$(HWKIT) kicad fill-distributors $(PRO)
+	$(HWKIT) kicad fill-distributors "$(PRO)"
 
 distributors-write:
-	$(HWKIT) kicad fill-distributors $(PRO) --write
+	$(HWKIT) kicad fill-distributors "$(PRO)" --write
 
 prices:
-	$(HWKIT) kicad prices $(PRO) --out $(PRICES) --work pcb/build/prices
+	$(HWKIT) kicad prices "$(PRO)" --out $(PRICES) --work pcb/build/prices
 
 outputs:
-	$(HWKIT) kicad outputs $(PRO) --out pcb --boards $(BOARDS)
+	$(HWKIT) kicad outputs "$(PRO)" --out pcb --boards $(BOARDS)
 	$(HWKIT) readme update $(README_ARGS)
 
 readme:
 	$(HWKIT) readme update $(README_ARGS)
 
 check:
-	$(HWKIT) kicad check $(PRO) --work pcb/build/check --outputs pcb --boards $(BOARDS)
+	$(HWKIT) kicad check "$(PRO)" --work pcb/build/check --outputs pcb --boards $(BOARDS)
 	$(HWKIT) readme check $(README_ARGS)
 
 release-check:
-	$(HWKIT) kicad check $(PRO) --work pcb/build/check --outputs pcb --boards $(BOARDS)
+	$(HWKIT) kicad check "$(PRO)" --work pcb/build/check --outputs pcb --boards $(BOARDS)
 	$(HWKIT) readme check $(README_ARGS) --release
 
 stock:
-	$(HWKIT) partsbox stock $(PRO) --boards $(BOARDS) --work pcb/build/partsbox --out pcb/bom
+	$(HWKIT) partsbox stock "$(PRO)" --boards $(BOARDS) --work pcb/build/partsbox --out pcb/bom
 
 partsbox-project:
-	$(HWKIT) partsbox project $(PRO) --work pcb/build/partsbox
+	$(HWKIT) partsbox project "$(PRO)" --work pcb/build/partsbox
 
 all: outputs check
 
