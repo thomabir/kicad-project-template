@@ -1,0 +1,20 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "15ade1cc-e3e0-450e-8e76-8165f0b91794")
+	(paper "A4")
+	(title_block
+		(title "PRJ-0000 Title")
+		(date "2026-10-24")
+		(rev "0.1")
+		(company "Thomas Birbacher")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

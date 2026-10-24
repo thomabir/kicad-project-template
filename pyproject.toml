@@ -1,0 +1,11 @@
+[project]
+name = "prj-template"
+version = "0.0.0"
+requires-python = ">=3.11,<3.13"
+dependencies = ["hwkit"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+hwkit = { git = "https://github.com/thomabir/agent-tooklit", tag = "v0.6.0" }

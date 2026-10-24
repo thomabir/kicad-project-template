@@ -1,0 +1,13 @@
+build/
+.venv/
+
+# KiCad
+*-backups/
+_autosave-*
+*.lck
+*.kicad_prl
+fp-info-cache
+\#auto_saved_files#
+
+# OS and editors
+.DS_Store
