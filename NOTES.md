@@ -85,4 +85,3 @@ PRJ-0123-name/
 
 - CI and portability: `lab/profile.toml` has macOS paths.
 - PDF/PNG/Gerber time stamps give binary diffs after each export.
-- Case targets in the Makefile.
