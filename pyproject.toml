@@ -12,4 +12,4 @@ template = "https://github.com/thomabir/kicad-project-template"
 package = false
 
 [tool.uv.sources]
-hwkit = { git = "https://github.com/thomabir/agent-tooklit", tag = "v0.7.3" }
+hwkit = { git = "https://github.com/thomabir/agent-tooklit", tag = "v0.7.4" }

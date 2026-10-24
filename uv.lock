@@ -341,8 +341,8 @@ wheels = [
 
 [[package]]
 name = "hwkit"
-version = "0.7.3"
-source = { git = "https://github.com/thomabir/agent-tooklit?tag=v0.7.3#6b852c0207f24d3869e5bd705da161752f3a8c5b" }
+version = "0.7.4"
+source = { git = "https://github.com/thomabir/agent-tooklit?tag=v0.7.4#040d77a3e6d0485ba81c8bf350b930b9eac00e58" }
 dependencies = [
     { name = "cadquery" },
     { name = "matplotlib" },
@@ -745,7 +745,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "hwkit", git = "https://github.com/thomabir/agent-tooklit?tag=v0.7.3" }]
+requires-dist = [{ name = "hwkit", git = "https://github.com/thomabir/agent-tooklit?tag=v0.7.4" }]
 
 [[package]]
 name = "propcache"
