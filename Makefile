@@ -17,7 +17,7 @@ help:
 	@echo "readme                         README generated blocks only"
 	@echo "check                          KiCad checks, ERC, DRC, outputs and README up to date"
 	@echo "release-check                  check, and no TODO in the README"
-	@echo "stock                          PartsBox stock of the BOM parts"
+	@echo "stock                          PartsBox stock of the BOM parts; stock.csv, DigiKey order file against stock"
 	@echo "partsbox-project               PartsBox project with the BOM"
 	@echo "all                            outputs, then check"
 	@echo "clean                          delete the build folders"
@@ -57,7 +57,7 @@ release-check:
 	$(HWKIT) readme check $(README_ARGS) --release
 
 stock:
-	$(HWKIT) partsbox stock $(PRO) --boards $(BOARDS) --work pcb/build/partsbox
+	$(HWKIT) partsbox stock $(PRO) --boards $(BOARDS) --work pcb/build/partsbox --out pcb/bom
 
 partsbox-project:
 	$(HWKIT) partsbox project $(PRO) --work pcb/build/partsbox

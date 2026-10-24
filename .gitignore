@@ -1,6 +1,10 @@
 build/
 .venv/
 
+# PartsBox stock (changes with the inventory)
+pcb/bom/stock.csv
+pcb/bom/order-digikey-against-stock.csv
+
 # KiCad
 *-backups/
 _autosave-*
